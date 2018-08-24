@@ -80,7 +80,7 @@ heatmap <- function(fpath=NULL, files=NULL, width=1600, height=800) {
     # Status update
     print("Generating image file")
     
-    # Generate jpeg (intermediary HTML file will be generated)
+    # Generate jpeg (intermediary HTML file will be generated and automatically deleted)
     mapshot(m, file = file.path(fpath, paste(substring(basename(x), 1, nchar(basename(x))-5), "_heatmap.jpeg", sep=""), fsep="/"), vwidth = width, vheight = height, delay = 0.5, zoom=3)
   })
   
