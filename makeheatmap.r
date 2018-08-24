@@ -1,5 +1,4 @@
 '''
-Last edited: 8/24/18
 Creates printable version of BNA heat map visible on website https://bna.peopleforbikes.org/
 Inputs: List of BNA census blocks file(s) as json in WGS84 coordinate system <files>, or filepath to folder containing json files <fpath>.
 Outputs: JPEG image of heatmap identical to BNA website but with an equal interval scale across 10 bins.
