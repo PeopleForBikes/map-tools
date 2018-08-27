@@ -15,6 +15,7 @@ Depending on the functions that you choose to use, you will need some portion of
 ![Topeka, KA](images/topekaksheat.jpeg "Topeka, KS BNA Heat Map")
 
 The heat map on the BNA website is the "Census blocks with access" map, which colors the map according to each census block's BNA score on a scale of 0 to 100. The map on the BNA website uses a scale with natural breaks, so the uppermost category is 54-100. The script included here creates a map with equal intervals of 10, so the resulting map will typically be more red/purple than the map on the website. You can see examples of the equal interval heat maps for BNA-rated cities on PeopleForBikes' City Ratings website, on the downloadable PDF summary sheets available for each city. 
+
 Example: [Santa Fe, NM City Ratings](https://cityratings.peopleforbikes.org/wp-content/uploads/2018/04/santafeNM.pdf)
 
 To create a similar map using a GIS editing program, assign colors as follows and do not assign a color to blocks that do not have a BNA score.
