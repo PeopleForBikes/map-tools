@@ -5,9 +5,9 @@ PeopleForBikes' Bike Network Analysis (BNA) scores cities and other geographic a
 ### Prerequisites
 Depending on the functions that you choose to use, you will need some portion of the following open-source resources:
 * Python 3.6+
-..* Python libraries: pandas, geopandas, numpy, os 
+   * Python libraries: pandas, geopandas, numpy, os 
 * R 3.4.3+
-..* R libraries: leaflet, geojsonio, mapview, dplyr, tools
+   * R libraries: leaflet, geojsonio, mapview, dplyr, tools
 * QGIS
 
 ## Heat map
