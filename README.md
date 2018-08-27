@@ -4,7 +4,7 @@ Scripts to build maps from BNA output data.
 
 ## Heat map
 
-![alt text](https://github.com/PeopleForBikes/map-tools/images/topekaksheat.jpeg "Topeka, KS BNA Heat Map")
+![Topeka, KA](https://github.com/PeopleForBikes/map-tools/images/topekaksheat.jpeg "Topeka, KS BNA Heat Map")
 
 The heat map on the BNA website is the "Census blocks with access" map, which colors the map according to each census block's BNA score on a scale of 0 to 100. The map on the BNA website uses a scale with natural breaks, so the uppermost category is 54-100. The script included here creates a map with equal intervals of 10, so the resulting map will typically be more red/purple than the map on the website. 
 
