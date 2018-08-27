@@ -10,6 +10,7 @@ library(leaflet)
 library(geojsonio)
 library(mapview)
 library(dplyr)
+library(tools)
 
 # Set working directory as default filepath
 fpath = getwd()
@@ -32,28 +33,26 @@ heatmap <- function(fpath=NULL, files=NULL, width=1600, height=800) {
   # if list of files provided, use that and create directory from first listed file 
   if(!is.null(files)) {
     # check for single file case
-    if (length(files) == 1){
+    if (length(files) == 1) {
       fpath = dirname(files)
     }
     # check for file list case
     else {
-      fpath = dirname(files[1])}
-  }
-  # if file path provided, create list of json files within
-  elif(!is.null(fpath)) {
-    files <- list.files(fpath, pattern="*.json", full.names=T, recursive=FALSE)
+      fpath = dirname(files[1])
+    }
+  } else if(!is.null(fpath)) {
+    files <- list.files(fpath, pattern="*(.*)json", full.names=T, recursive=FALSE)
     # if no json files in folder, tell user
     if(length(files) == 0){
-      return("No json files provided.")}
-  }
-  # inform user if neither fpath or files are specified
-  elif(is.null(fpath) && is.null(files)){
+      return("No json files provided.")
+    }
+  } else if(is.null(fpath) && is.null(files)) {
     return("Must supply a list of file names or a file path to a folder containing json files.")
   }
 
   # TO DO: Load waterblocks census data to remove blocks that have no land from the map
   #print("Removing water blocks")
-  #waterblocks <- read.csv("C://Users/rebec/Documents/bna/census_block_files/censuswaterblocks.csv")
+  #waterblocks <- read.csv("")
   
   # Create color palette to match colors on BNA website. NOTE: Bins are equal interval, unlike website.
   pal <- colorBin(c("#FF3300", "#D04628", "#B9503C", "#A25A51", "#8B6465", "#736D79", "#5C778D", "#4581A2", "#2E8BB6", 
@@ -82,8 +81,7 @@ heatmap <- function(fpath=NULL, files=NULL, width=1600, height=800) {
     print("Generating image file")
     
     # Generate jpeg (intermediary HTML file will be generated and automatically deleted)
-    mapshot(m, file = file.path(fpath, paste(substring(basename(x), 1, nchar(basename(x))-5), "_heatmap.jpeg", sep=""), fsep="/"), vwidth = width, vheight = height, delay = 0.5, zoom=3, remove_controls = c("zoomControl", "layersControl", "homeButton",
-                                                                                                                                                                                                              "scaleBar"))
+    mapshot(m, file = file.path(fpath, paste(file_path_sans_ext(basename(x)), "_heatmap.jpeg", sep=""), fsep="/"), vwidth = width, vheight = height, delay = 0.5, zoom=3)
   })
 }
 
