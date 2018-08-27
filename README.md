@@ -45,4 +45,4 @@ A QGIS layer style file `heatmap_equalint.qml` is included as a shortcut to repl
  
 The bikeshed map is not one of the maps viewable on the BNA website but can be produced from the "neighborhood_census_blocks" shapefile and "neighborhood_connected_census_blocks" csv. The bikeshed map is a map of a designated census block (the source block) and all other census blocks (the target blocks) within the bikeshed radius of that source block as measured on the road network. The map illustrates which blocks within the bikeshed are reachable from the source block via the low stress network and which are not. In the illustration below, blocks reachable via a low stress route are blue and blocks reachable only via a high stress route are orange/red. The source block is yellow. Visualizing accessibility to a single census blocks is useful to understand more specific location-based accesibility, and barriers within the bikeshed.
 
-[PeopleForBikes Bikeshed](images/boulder_connected.png "PeopleForBikes Bikeshed")
+![PeopleForBikes Bikeshed](images/boulder_connected.png "PeopleForBikes Bikeshed")
