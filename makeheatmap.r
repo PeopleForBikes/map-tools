@@ -1,10 +1,9 @@
-'''
-Creates printable version of BNA heat map visible on website https://bna.peopleforbikes.org/
-Inputs: List of BNA census blocks file(s) as json in WGS84 coordinate system <files>, or filepath to folder containing json files <fpath>.
-Outputs: JPEG image of heatmap identical to BNA website but with an equal interval scale across 10 bins.
-NOTE: Because this script builds a map with equal intervals, the results will not precisly mirror the maps on the BNA website, 
-      which are not equal interval
-'''
+# Creates printable version of BNA heat map visible on website https://bna.peopleforbikes.org/
+# Inputs: List of BNA census blocks file(s) as json in WGS84 coordinate system <files>, or filepath to folder containing json files <fpath>.
+# Outputs: JPEG image of heatmap identical to BNA website but with an equal interval scale across 10 bins.
+# NOTE: Because this script builds a map with equal intervals, the results will not precisly mirror the maps on the BNA website, 
+#       which are not equal interval
+
 
 # Load Libraries
 library(leaflet)
@@ -18,14 +17,13 @@ fpath = getwd()
 # Create list of files from filepath, gatering any json files in folder
 files <- list.files(fpath, pattern="*.json", full.names=T, recursive=FALSE)
 
-"""
-Args
- fpath - path to folder containing json files*
- files - list of file name(s) as character vector*
- width - number in pixels, optional
- height - number in pixels, optional
- * Requires fpath or files list. If both are supplied, the files list will be prioritized.
-"""
+# Args
+#  fpath - path to folder containing json files*
+#  files - list of file name(s) as character vector*
+#  width - number in pixels, optional
+#  height - number in pixels, optional
+#  * Requires fpath or files list. If both are supplied, the files list will be prioritized.
+
 heatmap <- function(fpath=NULL, files=NULL, width=1600, height=800) {
   
   # Status update
@@ -39,16 +37,19 @@ heatmap <- function(fpath=NULL, files=NULL, width=1600, height=800) {
     }
     # check for file list case
     else {
-      fpath = dirname(files[1])
+      fpath = dirname(files[1])}
+  }
   # if file path provided, create list of json files within
   elif(!is.null(fpath)) {
     files <- list.files(fpath, pattern="*.json", full.names=T, recursive=FALSE)
     # if no json files in folder, tell user
-    if length(files) == 0:
-      return("No json files provided.")
+    if(length(files) == 0){
+      return("No json files provided.")}
+  }
   # inform user if neither fpath or files are specified
   elif(is.null(fpath) && is.null(files)){
     return("Must supply a list of file names or a file path to a folder containing json files.")
+  }
 
   # TO DO: Load waterblocks census data to remove blocks that have no land from the map
   #print("Removing water blocks")
@@ -81,8 +82,8 @@ heatmap <- function(fpath=NULL, files=NULL, width=1600, height=800) {
     print("Generating image file")
     
     # Generate jpeg (intermediary HTML file will be generated and automatically deleted)
-    mapshot(m, file = file.path(fpath, paste(substring(basename(x), 1, nchar(basename(x))-5), "_heatmap.jpeg", sep=""), fsep="/"), vwidth = width, vheight = height, delay = 0.5, zoom=3)
+    mapshot(m, file = file.path(fpath, paste(substring(basename(x), 1, nchar(basename(x))-5), "_heatmap.jpeg", sep=""), fsep="/"), vwidth = width, vheight = height, delay = 0.5, zoom=3, remove_controls = c("zoomControl", "layersControl", "homeButton",
+                                                                                                                                                                                                              "scaleBar"))
   })
-  
 }
 
