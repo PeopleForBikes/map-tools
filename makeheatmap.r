@@ -52,7 +52,7 @@ heatmap <- function(fpath=NULL, files=NULL, width=1600, height=800) {
 
   # Load waterblocks census data to remove blocks that have no land from the map
   print("Removing water blocks")
-  waterblocks <- read.csv("/data/censuswaterblocks.csv")
+  waterblocks <- read.csv("./data/censuswaterblocks.csv")
   
   # Create color palette to match colors on BNA website. NOTE: Bins are equal interval, unlike website.
   pal <- colorBin(c("#FF3300", "#D04628", "#B9503C", "#A25A51", "#8B6465", "#736D79", "#5C778D", "#4581A2", "#2E8BB6", 
@@ -69,8 +69,8 @@ heatmap <- function(fpath=NULL, files=NULL, width=1600, height=800) {
     #Remove blocks with no BNA score
     area <- subset(area, OVERALL_SC >= 0)
     
-    # TO DO: Remove blocks that have no land area
-    #area <- area[!area$BLOCKID10 %in% waterblocks$GEOID10, ]
+    # Remove blocks that have no land area
+    area <- area[!area$BLOCKID10 %in% waterblocks$GEOID10, ]
     
     # Create map object containing Carto's Positron basemap
     m <- leaflet(area) %>%
