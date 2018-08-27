@@ -10,13 +10,16 @@ Depending on the functions that you choose to use, you will need some portion of
    * R libraries: leaflet, geojsonio, mapview, dplyr, tools
 * QGIS
 
-## Heat map
+## Heat Map
 
 ![Topeka, KA](images/topekaksheat.jpeg "Topeka, KS BNA Heat Map")
 
-The heat map on the BNA website is the "Census blocks with access" map, which colors the map according to each census block's BNA score on a scale of 0 to 100. The map on the BNA website uses a scale with natural breaks, so the uppermost category is 54-100. The script included here creates a map with equal intervals of 10, so the resulting map will typically be more red/purple than the map on the website. 
+The heat map on the BNA website is the "Census blocks with access" map, which colors the map according to each census block's BNA score on a scale of 0 to 100. The map on the BNA website uses a scale with natural breaks, so the uppermost category is 54-100. The script included here creates a map with equal intervals of 10, so the resulting map will typically be more red/purple than the map on the website. You can see examples of the equal interval heat maps for BNA-rated cities on PeopleForBikes' [City Ratings website](https://cityratings.peopleforbikes.org/), on the downloadable PDF summary sheets available for each city. 
 
-To create a similar map using a GIS editing program, assign colors as follows and do not assign a color to blocks that do not have a BNA score.
+Example: [Santa Fe, NM City Ratings](https://cityratings.peopleforbikes.org/wp-content/uploads/2018/04/santafeNM.pdf)
+
+#### Create Map with GIS Editor
+To replicate the heat map using a GIS editing program, assign colors as follows. Do not assign colors to blocks lacking a BNA score.
  
 | Block score   | Hex color  |
 ----------------|:----------:|
@@ -31,11 +34,12 @@ To create a similar map using a GIS editing program, assign colors as follows an
 | 80-90         | #2E8BB6    |
 | 90-100        | #009FDF    |
 
-A QGIS layer style file `heatmap_equalint.qml` is included as a shortcut to make the map in the QGIS editing program.
+A QGIS layer style file `heatmap_equalint.qml` is included as a shortcut to replicate the map in the QGIS editing program.
 
-To create the map programatically and output it as a jpeg image:
-1. Convert the census blocks shapefile into a json or geoson file in the WGS84 projection. You can do this using a GIS program such as QGIS or ArcGIS, or you can do this programmatically. A Python script to do this programmatically for one or many files simultaneously will be added soon.
-2. Run the `makeheatmap.r` script with the json or geojson file(s). The script is written in R to take advantage of the Leaflet for R library.
+#### Create Map Programmatically
+
+1. Convert the census blocks shapefile into a json or geoson file in the WGS84 projection. You can do this using a GIS program such as QGIS or ArcGIS, or you can do this programmatically. A Python script to do this programmatically will be added soon.
+2. Run the `makeheatmap.r` script using the json or geojson file(s) as input. The script is written in R to take advantage of the Leaflet for R library.
 
 ## Bikeshed map
  
