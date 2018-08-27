@@ -9,8 +9,6 @@ Scripts to build maps from BNA output data.
 The heat map on the BNA website is the "Census blocks with access" map, which colors the map according to each census block's BNA score on a scale of 0 to 100. The map on the BNA website uses a scale with natural breaks, so the uppermost category is 54-100. The script included here creates a map with equal intervals of 10, so the resulting map will typically be more red/purple than the map on the website. 
 
 To create a similar map using a GIS editing program, assign colors as follows and do not assign a color to blocks that do not have a BNA score.
-
-<center>
  
 | Block score   | Hex color  |
 ----------------|:----------:|
@@ -24,8 +22,6 @@ To create a similar map using a GIS editing program, assign colors as follows an
 | 70-80         | #4581A2    |
 | 80-90         | #2E8BB6    |
 | 90-100        | #009FDF    |
-
-</center>
 
 A QGIS layer style file `heatmap_equalint.qml` is included as a shortcut to make the map in the QGIS editing program.
 
