@@ -50,9 +50,9 @@ heatmap <- function(fpath=NULL, files=NULL, width=1600, height=800) {
     return("Must supply a list of file names or a file path to a folder containing json files.")
   }
 
-  # TO DO: Load waterblocks census data to remove blocks that have no land from the map
-  #print("Removing water blocks")
-  #waterblocks <- read.csv("")
+  # Load waterblocks census data to remove blocks that have no land from the map
+  print("Removing water blocks")
+  waterblocks <- read.csv("/data/censuswaterblocks.csv")
   
   # Create color palette to match colors on BNA website. NOTE: Bins are equal interval, unlike website.
   pal <- colorBin(c("#FF3300", "#D04628", "#B9503C", "#A25A51", "#8B6465", "#736D79", "#5C778D", "#4581A2", "#2E8BB6", 
