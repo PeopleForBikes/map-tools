@@ -10,6 +10,8 @@ The heat map on the BNA website is the "Census blocks with access" map, which co
 
 To create a similar map using a GIS editing program, assign colors as follows and do not assign a color to blocks that do not have a BNA score.
 
+<center>
+ 
 | Block score   | Hex color  |
 ----------------|:----------:|
 | 0-10          | #FF3300    |
@@ -22,6 +24,8 @@ To create a similar map using a GIS editing program, assign colors as follows an
 | 70-80         | #4581A2    |
 | 80-90         | #2E8BB6    |
 | 90-100        | #009FDF    |
+
+</center>
 
 A QGIS layer style file `heatmap_equalint.qml` is included as a shortcut to make the map in the QGIS editing program.
 
