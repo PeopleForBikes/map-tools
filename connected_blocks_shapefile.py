@@ -22,6 +22,7 @@ conn_path = os.getcwd() + "/neighborhood_connected_census_blocks.csv"
 # File path for census bocks shapefile
 blocks_path = os.getcwd() + "/neighborhood_census_blocks.shp"
 
+# Function to filter shapefile based on csv info for source block
 def join_tables(name, source_id, conn_path, blocks_path):
     
     # Upload connected census blocks csv
@@ -67,8 +68,9 @@ def join_tables(name, source_id, conn_path, blocks_path):
 
     return bikeshed
 
+# run function
 bikeshed = join_tables(name, source_id, conn_path, blocks_path)
 
-#### write bikeshed to file
+# write bikeshed to file
 bikeshed.to_file(os.getcwd() + "/" + name + "_bikeshed.shp")
 
