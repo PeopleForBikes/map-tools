@@ -178,16 +178,16 @@
   </edittypes>
   <renderer-v2 attr="OVERALL_SC" forceraster="0" symbollevels="0" type="graduatedSymbol" graduatedMethod="GraduatedColor" enableorderby="0">
     <ranges>
-      <range render="true" symbol="0" lower="0.000000000000000" upper="10.000000000000000" label=" 0.0 - 10.0 "/>
-      <range render="true" symbol="1" lower="10.000000000000000" upper="20.000000000000000" label=" 6.0 - 12"/>
-      <range render="true" symbol="2" lower="20.000000000000000" upper="30.000000000000000" label=" 12 - 18 "/>
-      <range render="true" symbol="3" lower="30.000000000000000" upper="40.000000000000000" label=" 18 - 24 "/>
-      <range render="true" symbol="4" lower="40.000000000000000" upper="50.000000000000000" label=" 24 - 30 "/>
-      <range render="true" symbol="5" lower="50.000000000000000" upper="60.000000000000000" label=" 30 - 36 "/>
-      <range render="true" symbol="6" lower="60.000000000000000" upper="70.000000000000000" label=" 36 - 42 "/>
-      <range render="true" symbol="7" lower="70.000000000000000" upper="80.000000000000000" label=" 42 - 48 "/>
-      <range render="true" symbol="8" lower="80.000000000000000" upper="90.000000000000000" label=" 48 - 54 "/>
-      <range render="true" symbol="9" lower="90.000000000000000" upper="100.000000000000000" label=" 54 - 100 "/>
+      <range render="true" symbol="0" lower="0.000000000000000" upper="10.000000000000000" label=" 0 - 10"/>
+      <range render="true" symbol="1" lower="10.000000000000000" upper="20.000000000000000" label=" 10 - 20"/>
+      <range render="true" symbol="2" lower="20.000000000000000" upper="30.000000000000000" label=" 20 - 30 "/>
+      <range render="true" symbol="3" lower="30.000000000000000" upper="40.000000000000000" label=" 30 - 40 "/>
+      <range render="true" symbol="4" lower="40.000000000000000" upper="50.000000000000000" label=" 40 - 50 "/>
+      <range render="true" symbol="5" lower="50.000000000000000" upper="60.000000000000000" label=" 50 - 60 "/>
+      <range render="true" symbol="6" lower="60.000000000000000" upper="70.000000000000000" label=" 60 - 70 "/>
+      <range render="true" symbol="7" lower="70.000000000000000" upper="80.000000000000000" label=" 70 - 80 "/>
+      <range render="true" symbol="8" lower="80.000000000000000" upper="90.000000000000000" label=" 80 - 90 "/>
+      <range render="true" symbol="9" lower="90.000000000000000" upper="100.000000000000000" label=" 90 - 100 "/>
     </ranges>
     <symbols>
       <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
@@ -540,8 +540,7 @@
   </labelattributes>
   <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
     <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
-      <fontProperties description="MS Shell Dlg 2,7.5,-1,5,50,0,0,0,0,0" style=""/>
-      <attribute field="" color="#000000" label=""/>
+      <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
     </DiagramCategory>
     <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
       <layer pass="0" class="SimpleMarker" locked="0">
