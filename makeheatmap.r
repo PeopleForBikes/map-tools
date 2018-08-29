@@ -16,7 +16,7 @@ library(tools)
 fpath = getwd()
 
 # Create list of files from filepath, gatering any json files in folder
-files <- list.files(fpath, pattern="*.json", full.names=T, recursive=FALSE)
+files <- list.files(fpath, pattern="*(.*)json", full.names=T, recursive=FALSE)
 
 # Args
 #  fpath - path to folder containing json files*
