@@ -48,15 +48,12 @@ def join_tables(name, source_id, conn_path, blocks_path):
     # Filter shapefile to only contain source block and its related target blocks
     bikeshed = shape[shape.BLOCKID10.isin(source_pairs)]
     
-    # Identify source block in new file
-    bikeshed.loc[bikeshed.BLOCKID10 == source_id, 'stress'] = "source"
-    
     # Loop through census blocks in bikeshed of source block and 
     # set stress level for each
     for block in bikeshed.BLOCKID10:
     
         # Check if block connection is low 
-        if source_pairs[source_pairs.target_blockid10==block].low_stress.values[0] == 'f':
+        if source_only[source_only.target_blockid10==block].low_stress.values[0] == 'f':
         
             # If high (low_stress==false), set stress to high
             bikeshed.loc[bikeshed.BLOCKID10 == block, 'stress'] = "high"
@@ -65,6 +62,9 @@ def join_tables(name, source_id, conn_path, blocks_path):
         
             # Otherwise, set as low stress
             bikeshed.loc[bikeshed.BLOCKID10 == block, 'stress'] = "low"
+            
+    # Identify source block in new file
+    bikeshed.loc[bikeshed.BLOCKID10 == source_id, 'stress'] = "source"
 
     return bikeshed
 
