@@ -38,7 +38,7 @@ A QGIS layer style file `heatmap_equalint.qml` is included as a shortcut to repl
 
 #### Create Map Programmatically
 
-1. Convert the census blocks shapefile into a json or geoson file in the WGS84 projection. You can do this using a GIS program such as QGIS or ArcGIS, or you can do this programmatically. A Python script to do this programmatically will be added soon.
+1. Convert the census blocks shapefile into a json or geoson file in the WGS 84 coordinate system. You can do this using a GIS program such as QGIS or ArcGIS, or you can do this programmatically. A Python script to do this programmatically will be added soon.
 2. Run the `makeheatmap.r` script using the json or geojson file(s) as input. The script is written in R to take advantage of the Leaflet for R library.
 
 ## Connected Blocks Map
@@ -57,7 +57,11 @@ The Census Blocks shapefile contains the geography of the area. The Connected Bl
 
 For most cities, the Connected Blocks csv contains over 1 million rows, and thus cannot be fully viewed or easily manipulated within Excel or similar programs. The `merge_connected_blocks.py` script uses Python to select the designated source block from the Connected Blocks csv, identify corresponding target blocks, filter the list of blocks for those with a BNA score, and then join the source/target stress data with the Census Blocks shapefile. The resulting output is a revised Census Blocks shapefile with a `stress` column to indicate high or low stress connections to the source block. 
 
-#### 3. Create map
+#### 3. Convert shapefile
+
+As with the heat map above, the shapefile needs to be converted to a json or geojson format in the WGS 84 coordinate system.
+
+#### 4. Create map
 
 Once the shapefile has been prepared, use the `makeconnectedmap.r` script to produce a map similar to the example above.
 
