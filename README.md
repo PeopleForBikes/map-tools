@@ -3,7 +3,7 @@ map-tools
 PeopleForBikes' Bike Network Analysis (BNA) scores cities and other geographic areas based on the quality of their low-stress bike network. The BNA generates output data that can be used to generate a variety of maps, including those visible on the BNA website. The `map-tools` repository provides resources to facilitate BNA data visualization and enhance the BNA's utility as a free, public resource for bike data analysis and advocacy.
 
 ### Prerequisites
-Depending on the functions that you choose to use, you will need some portion of the following open-source resources:
+Depending on the tools that you choose to use, you will need some portion of the following open-source resources:
 * Python 3.6+
    * Python libraries: pandas, geopandas, numpy, os 
 * R 3.4.3+
