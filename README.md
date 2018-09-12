@@ -38,7 +38,7 @@ A QGIS layer style file `heatmap_equalint.qml` is included in this repository as
 
 #### Create Map Programmatically
 
-1. Convert the census blocks shapefile (available as a downloadable file from the BNA website) into a json or geoson file in the WGS 84 coordinate system. You can do this using a GIS program such as QGIS or ArcGIS, or you can do this programmatically. A Python script to do this programmatically will be added soon.
+1. Convert the Census Blocks shapefile (available as a downloadable file from the BNA website) into a json or geoson file in the WGS 84 coordinate system. You can do this using a GIS program such as QGIS or ArcGIS, or you can do this programmatically. A Python script to do this programmatically will be added soon.
 2. Run the `makeheatmap.r` script using the json or geojson file(s) as input. The script is written in R to take advantage of the Leaflet for R library.
 
 ## Connected Blocks Map
@@ -59,7 +59,7 @@ For most cities, the Connected Blocks csv contains over 1 million rows, and thus
 
 #### 3. Convert shapefile
 
-As with the heat map above, the shapefile needs to be converted to a json or geojson format in the WGS 84 coordinate system.
+As with the heat map above, the shapefile needs to be converted to a json or geojson format in the WGS 84 coordinate system for visualization using Leaflet for R. Alternatively, you can visualize the shapefile using a GIS editing program.
 
 #### 4. Create map
 
