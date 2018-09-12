@@ -34,7 +34,7 @@ To replicate the heat map using a GIS editing program, assign colors as follows.
 | 80-90         | #2E8BB6    |
 | 90-100        | #009FDF    |
 
-A QGIS layer style file `heatmap_equalint.qml` is included as a shortcut to replicate the map in the QGIS editing program.
+A QGIS layer style file `heatmap_equalint.qml` is included in this repository as a shortcut to replicate the map in the QGIS editing program.
 
 #### Create Map Programmatically
 
