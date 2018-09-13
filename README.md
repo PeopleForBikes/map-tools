@@ -19,7 +19,7 @@ The heat map on the BNA website is the "Census blocks with access" map, which co
 Example: [Santa Fe, NM City Ratings](https://cityratings.peopleforbikes.org/wp-content/uploads/2018/04/santafeNM.pdf)
 
 #### Create Map with GIS Editor
-To replicate the heat map using a GIS editing program, assign colors as follows. Do not assign colors to blocks lacking a BNA score.
+To replicate the heat map using a GIS editing program, assign colors as follows. Do not assign colors to blocks lacking a BNA score. Using this method, census blocks that are 100% water will not be removed from the image, as they would with the programmatic method.
  
 | Block score   | Hex color  |
 ----------------|:----------:|
@@ -39,6 +39,7 @@ A QGIS layer style file `heatmap_equalint.qml` is included in this repository as
 #### Create Map Programmatically
 
 1. Convert the Census Blocks shapefile (available as a downloadable file from the BNA website) into a json or geoson file in the WGS 84 coordinate system. You can do this using a GIS program such as QGIS or ArcGIS, or you can do this programmatically. A Python script to do this programmatically will be added soon.
+2. Ensure you have the censuswaterblocks CSV file saved to the `data` folder on your computer.
 2. Run the `makeheatmap.r` script using the json or geojson file(s) as input. The script is written in R to take advantage of the Leaflet for R library.
 
 ## Connected Blocks Map
